@@ -1,101 +1,73 @@
-import Image from "next/image";
+import { MuseoModerno ,Josefin_Sans } from "next/font/google";
+import Image from 'next/image'
+import Navbar from "./components/Navbar";
+
+const josefinSans =Josefin_Sans({
+  weight: ['100' ,'200','300','400'],
+  style: ['normal' ,'italic']
+})
+
+const museoModerno = MuseoModerno({
+  weight: ['400', '600'],
+  style: ['normal', 'italic'],
+})
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="flex flex-col w-screen h-screen background-home pt-4 overflow-x-hidden">
+      <div className="title-segment">
+        <div className="ml-auto w-[fit-content]">
+          <Navbar/>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div className="relative cursor-default setselectable-home">
+          <div className={`titleFont-home ${museoModerno.className}  z-10 relative text-center`}>
+            M ppy
+          </div>
+          <div className="absolute top-[12%] left-[36%] w-[17%] aspect-square z-10">
+            <Image
+              src="/sadine_mippy.png"
+              fill
+              alt="Sadine"
+              className="-rotate-90"
+            />
+          </div>
+          <div className="absolute top-[23%] right-[19%] w-[14%] aspect-square z-0">
+            <Image
+              src="/penguine_mippy.png"
+              fill
+              alt="Sadine"
+              className="rotate-12"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="flex w-full h-auto justify-center items-cente">
+          <div className={`px-5 rounded-full py-1 start-button-home  lg:text-3xl ${josefinSans.className} font-light cursor-pointer text-black hover:bg-white duration-300`}>Start →</div>
+      </div>
+      <div className="absolute bottom-0 w-full h-auto">
+        <div className="relative w-2/3 aspect-[7/2] z-0">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+          src="/snow_mountain.png"
+          fill
+          alt="Snow Mountain" />
+        </div>
+        <div className="absolute bottom-0 right-0 w-[50%] aspect-[3/1] z-10">
           <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          src="/snow_mountain.png"
+          fill
+          alt="Snow Mountain"
+          className="scale-x-[-1]"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        </div>
+        <div className="absolute top-10 left-40 w-[10%] aspect-[2/1] z-20">
           <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          src="/bird.png"
+          fill
+          alt="Bird"
+          className=""
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </div>
     </div>
   );
 }
