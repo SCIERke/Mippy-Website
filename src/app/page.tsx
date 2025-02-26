@@ -7,12 +7,14 @@ import { useState ,useRef } from "react";
 
 const josefinSans =Josefin_Sans({
   weight: ['100' ,'200','300','400'],
-  style: ['normal' ,'italic']
+  style: ['normal' ,'italic'],
+  subsets: ['latin'],
 })
 
 const museoModerno = MuseoModerno({
   weight: ['400', '600'],
   style: ['normal', 'italic'],
+  subsets: ['latin'],
 })
 
 export default function Home() {
