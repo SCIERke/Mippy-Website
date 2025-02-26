@@ -2,7 +2,8 @@ import { GithubOutlined } from '@ant-design/icons';
 import { Josefin_Sans } from "next/font/google";
 const josefinSans =Josefin_Sans({
   weight: ['200','300','400'],
-  style: ['normal' ,'italic']
+  style: ['normal' ,'italic'],
+  subsets: ['latin'],
 })
 
 
